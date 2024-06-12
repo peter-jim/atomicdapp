@@ -1548,6 +1548,16 @@ export default function Listing() {
     };
 
     const showModal = () => {
+    
+        //增加判断是否已经连接上了两个钱包，如果其中一个没连接上，直接
+        if(!btcAddress|| btcAddress===''){
+            handleBitcoinClick();
+            return;
+        }
+        if(!address||address===''){
+            handleStarknetClick();
+            return
+        }
         setIsModalOpen(true);
     };
     const handleOk = () => {
